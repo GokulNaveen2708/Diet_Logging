@@ -44,8 +44,8 @@ resource "aws_lambda_function" "health_check" {
   handler       = "handler.lambda_handler"
   runtime       = "python3.11"
 
-  filename         = "/Users/gokul/Desktop/Diet_Logging/health_lambda.zip"
-  source_code_hash = filebase64sha256("/Users/gokul/Desktop/Diet_Logging/health_lambda.zip")
+  filename         = " ${path.module}/../../health_lambda.zip"
+  source_code_hash = filebase64sha256(" ${path.module}/../../health_lambda.zip")
 
   timeout = 5
 }
