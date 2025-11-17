@@ -15,6 +15,10 @@ build/
 
 # Terraform
 .terraform/
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.tfstate.lock.info
 
 # IDEs
 .vscode/
