@@ -55,7 +55,8 @@ resource "aws_iam_role_policy" "lambda_sns_publish" {
       {
         Effect = "Allow"
         Action = [
-          "sns:Publish"
+          "sns:Publish",
+          "sns:Subscribe"
         ]
         Resource = aws_sns_topic.trainer_notifications.arn
       }

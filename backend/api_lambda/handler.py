@@ -33,14 +33,18 @@ def lambda_handler(event, context):
         # Create user
         if method == "POST" and path == "/users":
             body = parse_body(event)
-            if body.get("role"):
-                if body.get("role") == "user":
-                    status, payload = create_user(body)
-                elif body.get("role") == "trainer":
-                    status, payload = create_trainer(body)
-                else:
-                    logger.warning("User creation failed validation: role=%s", body.get("role"))
-                    return 400, {"error": "valid role ('user' or 'trainer') are required"}
+            role = body.get("role")
+            if not role:
+                logger.warning("User creation failed validation: missing role")
+                return build_response(400, {"error": "role ('user' or 'trainer') is required"})
+
+            if role == "user":
+                status, payload = create_user(body)
+            elif role == "trainer":
+                status, payload = create_trainer(body)
+            else:
+                logger.warning("User creation failed validation: role=%s", role)
+                return build_response(400, {"error": "valid role ('user' or 'trainer') are required"})
 
             logger.info("Create user completed with status=%s", status)
             return build_response(status, payload)
