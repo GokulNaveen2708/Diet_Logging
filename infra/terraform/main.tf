@@ -142,8 +142,7 @@ resource "aws_apigatewayv2_api" "http_api" {
   protocol_type = "HTTP"
   cors_configuration {
     allow_origins = [
-      "http://localhost:3000",
-      "https://your-frontend-domain.com"  # add later when deployed
+      "http://localhost:3000"
     ]
     allow_methods = ["GET", "POST", "OPTIONS"]
     allow_headers = ["content-type"]
