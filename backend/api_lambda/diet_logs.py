@@ -6,6 +6,7 @@ from boto3.dynamodb.conditions import Key
 from dynamodb_client import diet_logs_table, foods_table
 from summaries import update_daily_summary
 from utils import get_today_iso_date, get_current_timestamp_iso
+from notifications import notify_trainer_user_logged_food
 
 logger = logging.getLogger(__name__)
 
@@ -124,6 +125,7 @@ def log_diet_entry(body: dict):
         carbs=carbs,
         fat=fat,
     )
+    notify_trainer_user_logged_food(user_id, item, summary)
 
     logger.info("Diet log created for user_id=%s food_id=%s timestamp=%s", user_id, food_id, log_timestamp)
     return 201, {"log": item, "updatedSummary": summary}
