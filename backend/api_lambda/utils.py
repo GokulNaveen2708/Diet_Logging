@@ -49,3 +49,7 @@ def get_today_iso_date():
 def get_current_timestamp_iso():
     """Return the current timestamp in ISO format (UTC)."""
     return datetime.now(timezone.utc).isoformat()
+
+
+def _now_iso():
+    return datetime.now(timezone.utc).isoformat()
