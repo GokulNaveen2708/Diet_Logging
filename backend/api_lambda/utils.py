@@ -23,7 +23,10 @@ def build_response(status_code: int, body: dict):
     return {
         "statusCode": status_code,
         "headers": {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "GET,POST,OPTIONS"
         },
         "body": json.dumps(_to_serializable(body)),
     }

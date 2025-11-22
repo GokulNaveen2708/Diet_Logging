@@ -13,6 +13,7 @@ sns = boto3.client("sns")
 
 
 def _yesterday_date_iso():
+    """Return yesterday's date in ISO-8601 (UTC) for summary selection."""
     # You can switch to a specific timezone later if needed
     today = datetime.now(timezone.utc).date()
     yesterday = today - timedelta(days=1)
@@ -20,6 +21,7 @@ def _yesterday_date_iso():
 
 
 def _find_trainer_for_user(user_id: str):
+    """Scan assignments to discover the active trainer for a user."""
     # Same as in notifications.py; you can refactor later if you like
     resp = trainer_assignments_table.scan()
     items = resp.get("Items", [])
@@ -30,6 +32,7 @@ def _find_trainer_for_user(user_id: str):
 
 
 def lambda_handler(event, context):
+    """Entry point triggered by EventBridge to broadcast yesterday's summaries."""
     if not TRAINER_NOTIFICATIONS_TOPIC_ARN:
         # No topic configured; nothing to do
         return {"status": "no-topic"}
