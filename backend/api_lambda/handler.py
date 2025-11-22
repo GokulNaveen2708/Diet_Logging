@@ -25,6 +25,10 @@ def lambda_handler(event, context):
     logger.info("Incoming request: method=%s path=%s", method, path)
 
     try:
+        # Respond to CORS preflight quickly
+        if method == "OPTIONS":
+            return build_response(204, {})
+
         # Health check
         if method == "GET" and path == "/health":
             logger.debug("Health check invoked.")

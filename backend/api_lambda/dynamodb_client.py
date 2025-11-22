@@ -1,3 +1,5 @@
+"""Centralized DynamoDB table handles used across Lambda modules."""
+
 import boto3
 
 dynamodb = boto3.resource("dynamodb")
@@ -18,4 +20,3 @@ foods_table = dynamodb.Table(FOODS_TABLE_NAME)
 trainers_table = dynamodb.Table(TRAINERS_TABLE_NAME)
 trainer_assignments_table = dynamodb.Table(TRAINER_ASSIGNMENTS_TABLE_NAME)
 messages_table = dynamodb.Table(MESSAGES_TABLE_NAME)
-
