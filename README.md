@@ -5,7 +5,7 @@ Diet Logging is a collaborative nutrition-tracking platform that helps clients a
 ## System Design & Architecture
 
 ### High-level diagram
-![System design diagram](pics/Untitled diagram-2025-12-03-233809.png)
+![System design diagram](pics/Untitled-diagram-2025-12-03-233809.png)
 
 ### Core components
 - **Client app (Next.js + React 19, Dockerized)** – Serves the dual onboarding flow, macro dashboards, food search, and trainer chat experiences. The image is built as a container so it runs consistently in local, staging, or production with the same environment variables and runtime.
