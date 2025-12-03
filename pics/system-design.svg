@@ -1,0 +1,44 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill: #e8f0ff; stroke: #2d6cdf; stroke-width: 3; }
+    .text { font: 16px sans-serif; fill: #0f172a; text-anchor: middle; dominant-baseline: middle; }
+    .sub { font: 14px sans-serif; fill: #0f172a; text-anchor: middle; dominant-baseline: middle; }
+    .line { stroke: #475569; stroke-width: 3; fill: none; }
+  </style>
+  <!-- Boxes -->
+  <rect class="box" x="80" y="80" width="260" height="90" rx="10" />
+  <text class="text" x="210" y="125">Next.js Client</text>
+  <text class="sub" x="210" y="145">Dockerized</text>
+
+  <rect class="box" x="470" y="80" width="260" height="90" rx="10" />
+  <text class="text" x="600" y="125">API Gateway</text>
+  <text class="sub" x="600" y="145">HTTP API v2</text>
+
+  <rect class="box" x="840" y="80" width="260" height="90" rx="10" />
+  <text class="text" x="970" y="125">AWS Lambda</text>
+  <text class="sub" x="970" y="145">Python 3.11</text>
+
+  <rect class="box" x="470" y="260" width="260" height="90" rx="10" />
+  <text class="text" x="600" y="305">SNS Notifications</text>
+
+  <rect class="box" x="840" y="260" width="260" height="90" rx="10" />
+  <text class="text" x="970" y="300">EventBridge</text>
+  <text class="sub" x="970" y="320">Nightly Cron</text>
+
+  <rect class="box" x="470" y="440" width="260" height="120" rx="10" />
+  <text class="text" x="600" y="485">DynamoDB Tables</text>
+  <text class="sub" x="600" y="510">Users | DietLogs | DailySummaries</text>
+  <text class="sub" x="600" y="530">Trainers | Messages</text>
+
+  <rect class="box" x="840" y="440" width="260" height="90" rx="10" />
+  <text class="text" x="970" y="485">Static Assets / Logs</text>
+
+  <!-- Lines -->
+  <line class="line" x1="340" y1="125" x2="470" y2="125" />
+  <line class="line" x1="730" y1="125" x2="840" y2="125" />
+  <line class="line" x1="970" y1="170" x2="970" y2="260" />
+  <line class="line" x1="970" y1="170" x2="600" y2="260" />
+  <line class="line" x1="600" y1="170" x2="600" y2="260" />
+  <line class="line" x1="970" y1="170" x2="970" y2="440" />
+  <line class="line" x1="600" y1="170" x2="600" y2="440" />
+</svg>
